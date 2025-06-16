@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./travel_recommendation.css">
+
+    <!-- Include Bootstrap Icons library -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <title>TravelMill</title>
+</head>
+<body>
+    <div id="navigation">
+        <div id="companyId">
+            <i class="bi bi-luggage">TravelMill</i>
+        </div>
+        <nav>
+            <a href="./travel_recommendation.html">Home</a>
+            <a href="./about_travelMill.html">About us</a>
+            <a href="./contact_travelMill.html">Contact us</a>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search...">
+            <i class="bi bi-search"></i>
+            <button id="searchButton">Search</button>
+            <button id="resetButton">Reset</button>
+        </div>
+    </div>
+
+    <script>
+        /* Search listeners */
+        document.getElementById("searchButton").addEventListener("click", function() {
+            alert("Searching for: " + document.getElementById("search").value);
+        });
+
+        document.getElementById("resetButton").addEventListener("click", function() {
+            document.getElementById("search").value = "";
+        });
+    </script>
+</body>
+</html>

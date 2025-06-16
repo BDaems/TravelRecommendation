@@ -1,0 +1,62 @@
+#navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333; /* Dark gray background */
+    padding: 15px;
+    color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays on top */
+}
+
+#companyId {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f0a500; /* Highlight on hover */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container input {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-container button, .search-container i {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: #f0a500;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container button:hover {
+    background-color: #d48f00; /* Darker shade on hover */
+}
