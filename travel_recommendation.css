@@ -34,6 +34,12 @@ nav a:hover {
     color: #f0a500; /* Highlight on hover */
 }
 
+nav button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
 .search-container {
     display: flex;
     align-items: center;
