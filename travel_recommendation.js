@@ -34,14 +34,18 @@ document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(event) {
         event.preventDefault(); // Prevent default anchor behavior
 
+        console.log("Navigation clicked:", this.id); // Debugging message
+
         // Remove 'active' class from all sections
         document.querySelectorAll("section").forEach(section => {
             section.classList.remove("active");
+            console.log("Hiding section:", section.id); // Debugging message
         });
 
         // Add 'active' class to the clicked section
         const targetId = this.getAttribute("href").substring(1); // Get section ID
         document.getElementById(targetId).classList.add("active");
+
+        console.log("Showing section:", targetId); // Debugging message
     });
 });
-
