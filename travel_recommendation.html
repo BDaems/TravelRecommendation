@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,18 +15,22 @@
             <i class="bi bi-luggage">TravelMill</i>
         </div>
         <nav>
-            <a href="./travel_recommendation.html">Home</a>
-            <a href="./about_travelMill.html">About us</a>
-            <a href="./contact_travelMill.html">Contact us</a>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('about')">About Us</button>
+            <button onclick="showSection('contact')">Contact</button>
         </nav>
         <div class="search-container">
-            <input type="text" id="search" placeholder="Search...">
+            <input type="text" id="searchInput" placeholder="Search...">
             <i class="bi bi-search"></i>
             <button id="searchButton">Search</button>
             <button id="resetButton">Reset</button>
         </div>
     </div>
-
+    <main>
+        <section id="home" class="active">Welcome to our website!</section>
+        <section id="about">About us content...</section>
+        <section id="contact">Contact details...</section>
+    </main>
     <script>
         /* Search listeners */
         document.getElementById("searchButton").addEventListener("click", function() {
