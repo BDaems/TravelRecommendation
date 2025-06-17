@@ -1,24 +1,24 @@
 /* Search listeners */
 document.getElementById("searchButton").addEventListener("click", function() {
-    alert("Searching for: " + document.getElementById("search").value);
-  // alert to be replaced by SearchRecommendations 
+    searchRecommendations(); // debuglogging in searchRecommendation
 });
+
 document.getElementById("resetButton").addEventListener("click", function() {
-    document.getElementById("search").value = "";
+    document.getElementById("searchInput").value = "";
 });
 
 function searchRecommendations() {
     fetch('data/info.json')
-        .then(response => response.json())
-        .then(data => {
-            let query = document.getElementById('searchInput').value.toLowerCase();
-            localStorage.setItem('lastSearch', query);  // Store for persistence
-
-            let results = data.filter(item => item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query));
-            document.getElementById('results').innerHTML = results.length 
-                ? results.map(item => `<p><strong>${item.title}</strong>: ${item.content}</p>`).join('')
-                : "<p>No results found.</p>";
-        });
+    .then(response => response.json())
+    .then(data => {
+        let query = document.getElementById('searchInput').value.toLowerCase();
+        localStorage.setItem('lastSearch', query);
+        let results = data.filter(item => item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query));
+        document.getElementById('results').innerHTML = results.length 
+            ? results.map(item => `<p><strong>${item.title}</strong>: ${item.content}</p>`).join('')
+            : "<p>No results found.</p>";
+    })
+    .catch(error => console.error("Error fetching data:", error)); // Logs errors
 }
 
 // Auto-load last search query
