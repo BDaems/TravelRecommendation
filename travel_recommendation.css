@@ -19,7 +19,7 @@
 }
 
 #home {
-    width: 50%;
+    width: 45%;
     min-width: 200px;
     padding: 50px;
     margin-top: 50px;
@@ -94,4 +94,12 @@ h1 {
 
 .search-container button:hover {
     background-color: #d48f00; /* Darker shade on hover */
+}
+
+section {
+    display: none; /* Hide all sections by default */
+}
+
+section.active {
+    display: block; /* Only the active section is visible */
 }
