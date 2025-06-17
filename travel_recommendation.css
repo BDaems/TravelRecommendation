@@ -40,7 +40,18 @@ nav button {
     cursor: pointer;
 }
 
+body {
+    background-image: url("./background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 .search-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
