@@ -8,6 +8,9 @@ body {
     display: none;
 }
 
+p { color: white !important; }
+
+
 /* Navigation */
 #navigation {
     display: flex;
@@ -136,6 +139,10 @@ h1 {
     flex-direction: column;
     color: white;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.contact-left p {
+    color: white !important;
 }
 
 .contact-right {
