@@ -23,29 +23,26 @@ function searchRecommendations() {
 
 // Auto-load last search query
 document.getElementById('searchInput').value = localStorage.getItem('lastSearch') || "";
-/* section display */
-function showSection(section) {
-    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-    document.getElementById(section).classList.add('active');
+
+/* Navigation between sections */
+function showSection(sectionId) {
+    // Hide all sections first
+    document.getElementById("sct-home").classList.add("hidden");
+    document.getElementById("sct-about").classList.add("hidden");
+    document.getElementById("sct-contact").classList.add("hidden");
+
+    // Show the clicked section
+    document.getElementById(sectionId).classList.remove("hidden");
 }
 
-/* Navigation in sections */
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default anchor behavior
-
-        console.log("Navigation clicked:", this.id); // Debugging message
-
-        // Remove 'active' class from all sections
-        document.querySelectorAll("section").forEach(section => {
-            section.classList.remove("active");
-            console.log("Hiding section:", section.id); // Debugging message
-        });
-
-        // Add 'active' class to the clicked section
-        const targetId = this.getAttribute("href").substring(1); // Get section ID
-        document.getElementById(targetId).classList.add("active");
-
-        console.log("Showing section:", targetId); // Debugging message
-    });
+// Add event listeners for navigation clicks
+document.getElementById("Home").addEventListener("click", function() {
+    showSection("sct-home");
 });
+document.getElementById("Aboutus").addEventListener("click", function() {
+    showSection("sct-about");
+});
+document.getElementById("Contactus").addEventListener("click", function() {
+    showSection("sct-contact");
+});
+

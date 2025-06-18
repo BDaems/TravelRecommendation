@@ -19,22 +19,25 @@
             <a href="#about" id="Aboutus">About us</a>
             <a href="#contact" id="Contactus">Contact Us</a>
         </nav>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <i class="bi bi-search"></i>
-            <button id="searchButton">Search</button>
+        <div class="search-container active">
+            <label for="searchInput" class="visually-hidden">Search</label>
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton">
+                <i class="bi bi-search"></i> Search
+            </button>
             <button id="resetButton">Reset</button>
         </div>
     </div>
     <main>
-        <section id="home" class="active">
+        <section id="sct-home" class="active">
             <div class="home-content">
                 <h1>Unlock the world, one destination at a time.</h1>
                 <p>We don’t just suggest places—we curate experiences. Whether hidden gems or iconic must-sees, we tailor recommendations to match your passion for exploration. Unlike generic travel lists, we analyze trends, local insights, and unique adventures, ensuring every journey feels personal, meaningful, and unforgettable. Your next dream trip starts here.</p>
             </div>
         </section>
-        <section id="about" class="active">About us content...
+        <section id="sct-about" class="active">
             <div class ="about-text">
+                <h1>About us</h1>
                 <p>TravelMill was born from a simple idea—curating personalized travel experiences beyond the standard itineraries. Founded by a group of passionate explorers, the first few years were focused on researching lesser-known destinations and building an online platform to share unique recommendations. As word spread, TravelMill gained traction among adventurous travelers seeking something different. TravelMill forged partnerships with boutique travel agencies and local guides. The company introduced an AI-powered destination matcher, helping users find the perfect getaway based on their interests and travel history.</p>
             </div>
             <div id="about-team">
@@ -58,7 +61,24 @@
                 </div>
             </div>
         </section>
-        <section id="contact">Contact details...</section>
+        <section id="sct-contact">
+            <h1>Contact Us</h1>
+            <p>Have questions or need travel recommendations? Reach out to us!</p>
+            
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+        
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
     </main>
     <script src="./travel_recommendations.js"></script>
 </body>
