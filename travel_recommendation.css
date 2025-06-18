@@ -26,7 +26,16 @@
     text-align: left;
     color: white;
     font-size: 18px;
- }
+}
+
+#sct-about {
+    min-width: 200px;
+    padding: 50px;
+    margin-top: 50px;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+}
 
 nav {
     display: flex;
@@ -65,6 +74,7 @@ h1 {
     text-shadow: 1px 0px 0px black, -1px 0px 0px black, 0px 1px 0px black, 0px -1px 0px black;
     font-size: 32px;
 }
+
 .search-container {
     background-color: white;
     border-radius: 15px;
@@ -98,13 +108,43 @@ h1 {
 
 .hidden { display: none; }
 
-#sct-contact {
-    background-color: #f8f8f8; /* Light gray background */
+/* Specifications for the about section */
+
+#about-team {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Separate "Meet Our Team" and the cards */
     padding: 40px;
+}
+
+#about-team h2 {
+    flex: 1;
+    font-size: 28px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Ensure readability */
+    background-color: transparent; /* No background */
+    padding: 10px;
+}
+
+.team-container {
+    flex: 3; /* Allows the team cards to take up more space */
+    display: flex;
+    gap: 20px;
+}
+
+.team-member {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    padding: 20px;
     border-radius: 10px;
-    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex: 1; /* Ensures even spacing among cards */
+    backdrop-filter: blur(5px); /* Softens the transparency */
+}
+
+#sct-contact {
+    padding: 40px;
     margin: 40px auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #sct-contact h2 {
