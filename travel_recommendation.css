@@ -66,7 +66,7 @@ h1 {
 }
 
 /* Search Container */
-.search-container {
+#search-container {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -76,14 +76,14 @@ h1 {
     margin-right: 20px;
 }
 
-.search-container input {
+#search-container input {
     padding: 5px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.search-container button {
+#search-container button {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
@@ -94,7 +94,7 @@ h1 {
     transition: background 0.3s;
 }
 
-.search-container button:hover {
+#search-container button:hover {
     background-color: #0056b3;
 }
 

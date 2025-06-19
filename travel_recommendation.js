@@ -1,3 +1,5 @@
+console.log("script started");
+
 document.addEventListener("DOMContentLoaded", function () {
     // Restore last search input
     document.getElementById("searchInput").value = localStorage.getItem("lastSearch") || "";
@@ -13,11 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Navigation logic
     function showSection(sectionId) {
-      const sections = ["sct-home", "sct-about", "sct-contact", "sct-recom"];
+      const sections = ["sct-home", "sct-about", "sct-contact", "sct-recom", "search-container"];
       sections.forEach(id => document.getElementById(id)?.classList.add("hidden"));
+
+      // Show the selected section
       document.getElementById(sectionId)?.classList.remove("hidden");
+
+      // Special case: reveal search-container if home is shown
+      if (sectionId === "sct-home") {
+        document.getElementById("search-container")?.classList.remove("hidden");
+      }
     }
-  
+
     // Nav link handlers
     document.getElementById("home").addEventListener("click", function (e) {
       e.preventDefault();
