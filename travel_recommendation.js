@@ -8,7 +8,7 @@ document.getElementById("resetButton").addEventListener("click", function() {
 });
 
 function searchRecommendations() {
-    fetch('data/info.json')
+    fetch('data/travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
         let query = document.getElementById('searchInput').value.toLowerCase();
