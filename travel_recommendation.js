@@ -47,3 +47,41 @@ document.getElementById("contactus").addEventListener("click", function() {
     showSection("sct-contact");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Search listeners
+    document.getElementById("searchButton").addEventListener("click", function () {
+      searchRecommendations();
+    });
+  
+    document.getElementById("resetButton").addEventListener("click", function () {
+      document.getElementById("searchInput").value = "";
+    });
+  
+    // Restore last search
+    document.getElementById("searchInput").value = localStorage.getItem("lastSearch") || "";
+  
+    // Navigation
+    function showSection(sectionId) {
+      document.getElementById("sct-home").classList.add("hidden");
+      document.getElementById("sct-about").classList.add("hidden");
+      document.getElementById("sct-contact").classList.add("hidden");
+      document.getElementById("sct-recom").classList.add("hidden");
+      document.getElementById(sectionId).classList.remove("hidden");
+    }
+  
+    document.getElementById("home").addEventListener("click", function (e) {
+      e.preventDefault();
+      showSection("sct-home");
+    });
+  
+    document.getElementById("aboutus").addEventListener("click", function (e) {
+      e.preventDefault();
+      showSection("sct-about");
+    });
+  
+    document.getElementById("contactus").addEventListener("click", function (e) {
+      e.preventDefault();
+      showSection("sct-contact");
+    });
+  });
+  
