@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
       searchRecommendations();
     });
   
-    document.getElementById("resetButton").addEventListener("click", function () {
-      document.getElementById("searchInput").value = "";
+    // document.getElementById("resetButton").addEventListener("click", function () {
+    //  document.getElementById("searchInput").value = "";
     });
   
     // Navigation logic
