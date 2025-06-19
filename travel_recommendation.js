@@ -30,19 +30,20 @@ function showSection(sectionId) {
     document.getElementById("sct-home").classList.add("hidden");
     document.getElementById("sct-about").classList.add("hidden");
     document.getElementById("sct-contact").classList.add("hidden");
+    document.getElementById("sct-recom").classList.add("hidden");
 
     // Show the clicked section
     document.getElementById(sectionId).classList.remove("hidden");
 }
 
 // Add event listeners for navigation clicks
-document.getElementById("Home").addEventListener("click", function() {
+document.getElementById("home").addEventListener("click", function() {
     showSection("sct-home");
 });
-document.getElementById("Aboutus").addEventListener("click", function() {
+document.getElementById("aboutus").addEventListener("click", function() {
     showSection("sct-about");
 });
-document.getElementById("Contactus").addEventListener("click", function() {
+document.getElementById("contactus").addEventListener("click", function() {
     showSection("sct-contact");
 });
 
