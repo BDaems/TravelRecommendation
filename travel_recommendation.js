@@ -11,19 +11,20 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // document.getElementById("resetButton").addEventListener("click", function () {
     //  document.getElementById("searchInput").value = "";
-    });
+    // });
   
     // Navigation logic
     function showSection(sectionId) {
-      const sections = ["sct-home", "sct-about", "sct-contact", "sct-recom", "search-container"];
+      const sections = ["sct-home", "sct-about", "sct-contact", "sct-recom"];
       sections.forEach(id => document.getElementById(id)?.classList.add("hidden"));
+      document.getElementById("search-container").classList.add("invisible");
 
       // Show the selected section
       document.getElementById(sectionId)?.classList.remove("hidden");
 
       // Special case: reveal search-container if home is shown
       if (sectionId === "sct-home") {
-        document.getElementById("search-container")?.classList.remove("hidden");
+        document.getElementById("search-container")?.classList.remove("invisible");
       }
     }
 
