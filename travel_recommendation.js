@@ -65,3 +65,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
+function normalizeWord(word) {
+    return word
+      .toLowerCase()
+      .replace(/(es|s)$/, ''); // removes plural endings like 's' and 'es'
+}
+
+function normalize(text) {
+    return text
+      .toLowerCase()
+      .split(/\W+/) // splits into words
+      .map(word => word.replace(/(es|s)$/, '')) // basic stemming
+      .join(' ');
+  }
+  
+  function searchRecommendations() {
+    const input = document.getElementById("searchInput").value;
+    const query = normalize(input);
+  
+    fetch("data/travel_recommendation_api.json")
+      .then(response => response.json())
+      .then(data => {
+        const results = data.filter(item => {
+          const title = normalize(item.title);
+          const content = normalize(item.content);
+          return title.includes(query) || content.includes(query);
+        });
+  
+        document.getElementById("results").innerHTML = results.length
+          ? results.map(item => `<p><strong>${item.title}</strong>: ${item.content}</p>`).join("")
+          : "<p>No results found.</p>";
+      })
+      .catch(error => console.error("Error fetching data:", error));
+  }
+  
