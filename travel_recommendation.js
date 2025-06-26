@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
               )
               .join("")
           : "<p>No results found.</p>";
+        
       })
       .catch(error => {
         console.error("Error fetching data:", error);
@@ -98,6 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.removeItem("lastSearch");
     resultsContainer.innerHTML = "";
   });
+
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault(); // prevents the form from submitting/reloading if wrapped in a form
+        searchRecommendations(); // trigger the same search logic
+    }
+  });
+
 
   document.getElementById("home").addEventListener("click", function (e) {
     e.preventDefault();
