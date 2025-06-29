@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Search function with images
   function searchRecommendations() {
+    console.log("search recom started");
     const query = normalize(searchInput.value);
     localStorage.setItem("lastSearch", searchInput.value);
 
